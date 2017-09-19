@@ -11,7 +11,7 @@ import (
 func getKeys(w http.ResponseWriter) {
     // Connect to redis.
     client := redis.NewClient(&redis.Options{
-        Addr:     "redis.marathon.l4lb.thisdcos.directory:6379",
+        Addr:     "redis.marathon.l4lb.thisdcos.directory:5656",
         Password: "", // no password set
         DB:       0,  // use default DB
     })
@@ -43,7 +43,7 @@ func saveHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintln(w, "Value :" + value)
 
     client := redis.NewClient(&redis.Options{
-        Addr:     "redis.marathon.l4lb.thisdcos.directory:6379",
+        Addr:     "redis.marathon.l4lb.thisdcos.directory:5656",
         Password: "", // no password set
         DB:       0,  // use default DB
     })
